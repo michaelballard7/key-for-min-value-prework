@@ -4,9 +4,11 @@
 def key_for_min_value(name_hash)
   return nil if name_hash == {}
   small_value = 0
+  values_arr = [ ]
   name_hash.collect do |key, value|
     if small_value == 0 || small_value > value  
       small_value = value 
+      values_arr << small_value
     end
   end 
   name_hash.key(small_value)
